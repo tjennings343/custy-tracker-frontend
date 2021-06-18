@@ -10,6 +10,7 @@ export default function customerReducer(state = {customers: []}, action){
             return{
                 ...state, customers: [...action.customers]
             }
+
             default: return state      
 
     }

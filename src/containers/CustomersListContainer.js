@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import CustomerForm from '../components/CustomerForm'
 import CustomerList from '../components/CustomerList'
-import {fetchCustomers} from '../actions/customerActions'
+import CustomerForm from '../components/CustomerForm'
+import {fetchCustomers, addCustomers} from '../actions/customerActions'
 
 
 class CustomersContainer extends Component {
@@ -12,10 +12,11 @@ class CustomersContainer extends Component {
     }
 
     render(){
+        
         return(
             <div>
-                <CustomerForm/>
                 <CustomerList customers={this.props.customers}/>
+                <CustomerForm addCustomers={this.props.customers}/>
             </div>
         )
     }
@@ -28,4 +29,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps,{fetchCustomers}) (CustomersContainer)
+export default connect(mapStateToProps,{fetchCustomers, addCustomers}) (CustomersContainer)
