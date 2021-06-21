@@ -25,14 +25,3 @@ export const addCustomers = (customer) => {
 
 }
 
-export const fetchCustomer = id => {
-    return (dispatch) => {
-        dispatch({ type: 'FETCH_CUSTOMER' })
-        fetch(`http://localhost:3000/customers/${id}`)
-        .then(res => res.json())
-        .then(customer => {
-            dispatch({ type: 'CUSTOMER_LOADED', customer })
-        })
-    }
-}
-

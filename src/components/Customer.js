@@ -1,14 +1,13 @@
 import React from 'react'
 
-const Customer = ({customers}) => {
+const Customer = ({customer}) => {
     
-    console.log(customers)
+    console.log(customer)
     
     
     return (
         <React.Fragment>
         <div>
-            
         </div>
     </React.Fragment>
         

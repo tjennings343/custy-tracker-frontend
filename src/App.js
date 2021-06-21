@@ -27,4 +27,3 @@ class App extends Component {
 
 export default connect()(App)
 
-// render={(routerProps) =><Customer {...routerProps} customers={this.props.customers}/>}

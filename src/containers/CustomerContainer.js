@@ -1,21 +1,23 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import Customer from '../components/Customer'
-import {fetchCustomer} from '../actions/customerActions'
+import {fetchCustomers} from '../actions/customerActions'
 
 
-class CustomerComponent extends Component{
-    
+class CustomerContainer extends Component{
+
     componentDidMount(){
-        this.props.fetchCustomer(this.props.match.params.id)
+        
+        this.props.fetchCustomers()
     }
+    
 
     render(){
-         
+        const customer = this.props.customers.find(cust => cust.id === parseInt(this.props.match.params.id))
+
         return(
-            
             <div>
-                <Customer customers={this.props.customers}/>
+                <Customer customer={customer}/>
             </div>
         )
     }
@@ -25,8 +27,9 @@ class CustomerComponent extends Component{
 
 const mapStateToProps = state => {
     return {
-        customers: state.customers.customers
+        customers: state.customers
+        
     }
 }
 
-export default connect(mapStateToProps,{fetchCustomer}) (CustomerComponent)
+export default connect(mapStateToProps,{fetchCustomers}) (CustomerContainer)
