@@ -6,14 +6,13 @@ import {fetchCustomers} from '../actions/customerActions'
 
 class CustomerContainer extends Component{
 
-    componentDidMount(){
-        
+    componentDidMount(){        
         this.props.fetchCustomers()
     }
     
 
     render(){
-        const customer = this.props.customers.find(cust => cust.id === parseInt(this.props.match.params.id))
+        const customer = this.props.customers.filter(cust => cust.id === parseInt(this.props.match.params.id))
 
         return(
             <div>

@@ -23,5 +23,8 @@ export const addCustomers = (customer) => {
         .then(customer => dispatch({type: 'CUSTOMER_ADDED', customer}))
     }
 
+
 }
+
+
 

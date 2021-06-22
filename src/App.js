@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom"
 
 import CustomersListContainer from './containers/CustomersListContainer'
 import CustomerContainer from './containers/CustomerContainer'
+// import Customer from './components/Customer'
 
 
 
