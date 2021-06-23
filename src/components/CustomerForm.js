@@ -1,13 +1,21 @@
 import React, {Component} from 'react'
+import { addCustomers} from '../actions/customerActions'
 import {connect} from 'react-redux'
-import {addCustomers} from '../actions/customerActions'
+
+
+
+
 
 class CustomerForm extends Component {
 
-    state = {
-        name: '',
-        phone_number: '',
-        email: ''
+    constructor(props){
+        super(props)
+
+        this.state = {
+            name: '',
+            phone_number: '',
+            email: ''
+        }
     }
 
     handleOnChange = event => {
@@ -24,6 +32,7 @@ class CustomerForm extends Component {
             phone_number: '',
             email: ''
         })
+        alert('Customer Created')
         
         
     }
@@ -45,4 +54,11 @@ class CustomerForm extends Component {
     }
 }
 
-export default connect(null, {addCustomers}) (CustomerForm)
+const mapStateToProps = state => {
+    return {
+        customers: state.customers
+    }
+}
+
+export default connect(mapStateToProps,{ addCustomers}) (CustomerForm)
+
