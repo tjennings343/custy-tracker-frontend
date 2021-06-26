@@ -11,6 +11,14 @@ const NavBar = () => {
         >
           My Customers
           </NavLink>
+
+          <NavLink 
+          style={{ marginRight: '10px' }} 
+          to="/customers/new"
+        >
+          Add Customer
+          </NavLink>
+
         </div>
     )
 }

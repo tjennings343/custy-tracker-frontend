@@ -18,6 +18,7 @@ class CustomerForm extends Component {
         }
     }
 
+    
     handleOnChange = event => {
         this.setState({
             [event.target.name]: event.target.value
@@ -35,18 +36,20 @@ class CustomerForm extends Component {
         alert('Customer Created')
         
         
+        
     }
 
     render() {
         return (
             <div>
+            <h1>Add A New Customer</h1>
                 <form onSubmit={this.handleOnSubmit}>
                     <label>Name:</label>
-                    <input type='text' name='name' value={this.state.name} onChange={this.handleOnChange}/><br/>
+                    <input type='text' required name='name' value={this.state.name} onChange={this.handleOnChange}/><br/>
                     <label>Phone Number:</label>
-                    <input type='integer' name='phone_number' value={this.state.phone_number} onChange={this.handleOnChange}/><br/>
+                    <input type='integer' required name='phone_number' value={this.state.phone_number} onChange={this.handleOnChange}/><br/>
                     <label>Email</label>
-                    <input type='text' name='email' value={this.state.email} onChange={this.handleOnChange}/><br/>
+                    <input type='text' required name='email' value={this.state.email} onChange={this.handleOnChange}/><br/>
                     <input type='submit'/>
                 </form>
             </div>
@@ -56,9 +59,9 @@ class CustomerForm extends Component {
 
 const mapStateToProps = state => {
     return {
-        customers: state.customers
+        customers: state.customers,
     }
 }
 
-export default connect(mapStateToProps,{ addCustomers}) (CustomerForm)
+export default connect(mapStateToProps,{addCustomers}) (CustomerForm)
 

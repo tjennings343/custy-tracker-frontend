@@ -11,6 +11,13 @@ export default function customerReducer(state = {customers: []}, action){
                 ...state, customers: [...action.customers]
             }
 
+        case 'DELETE_CUSTOMER':
+            return{
+                ...state, customers: state.customers.filter(customer => action.payload !== customer)
+            }
+
+        
+
 
             default: return state      
 

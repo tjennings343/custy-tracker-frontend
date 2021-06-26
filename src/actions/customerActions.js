@@ -26,6 +26,25 @@ export const addCustomers = (customer) => {
 
 }
 
+export const deleteCustomer = (id) => {
+    return (dispatch) => {
+        let configObj = {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify(id)
+        }
+
+        fetch(`http://localhost:3000/customers/${id}`, configObj)
+        .then(resp => resp.json())
+        .then(customer => dispatch({type: 'DELETE_CUSTOMER', customer}))
+    }
+}
+
+
+
 
 
 
