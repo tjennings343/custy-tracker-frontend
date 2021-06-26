@@ -5,7 +5,15 @@ const NavBar = () => {
 
     return(
         <div className='navbar'>
-            <NavLink 
+        
+          <NavLink 
+          style={{ marginRight: '10px' }} 
+          to="/"
+        >
+          Home
+          </NavLink>
+
+          <NavLink 
           style={{ marginRight: '10px' }} 
           to="/customers"
         >

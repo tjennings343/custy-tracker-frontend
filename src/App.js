@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Route } from "react-router-dom"
 import './App.css'
 
+import Home from './components/Home'
 import CustomersListContainer from './containers/CustomersListContainer'
 import CustomerContainer from './containers/CustomerContainer'
 import CustomerForm from './components/CustomerForm'
@@ -16,6 +17,7 @@ class App extends Component {
       <div className="App">
         <Router>
           <NavBar/>
+            <Route exact path='/' component={Home}/>
             <Route exact path='/customers' component={CustomersListContainer}/>
             <Route path= '/customers/new' component={CustomerForm}/>
             <Route path='/customers/:id' component={CustomerContainer}/>
